@@ -100,7 +100,7 @@ jobs:
           if [ -f pom.xml ]; then echo "build=maven" >> "$GITHUB_OUTPUT"
           elif [ -f build.gradle ] || [ -f build.gradle.kts ]; then echo "build=gradle" >> "$GITHUB_OUTPUT"
           else echo "build=none" >> "$GITHUB_OUTPUT"; fi
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         if: steps.detect.outputs.build != 'none'
         with:
           distribution: temurin
